@@ -14,7 +14,7 @@ namespace ConsoleApplication
 
         public static void ShowNumbers(INumberSequenceGenerator n)
         {
-            List<int> list = (List<int>)n.GenerateNumbers();
+            List<int> list = n.GenerateNumbers().ToList();
             
             for (int i = 0; i < list.Count(); i++)
             {
