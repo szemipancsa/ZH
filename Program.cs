@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Common_;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApplication
 {
@@ -6,7 +9,17 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ShowNumbers(new ZeroGenerator(5));
+        }
+
+        public static void ShowNumbers(INumberSequenceGenerator n)
+        {
+            List<int> list = (List<int>)n.GenerateNumbers();
+            
+            for (int i = 0; i < list.Count(); i++)
+            {
+                Console.WriteLine($"{i}. elem értéke: {list[i]}");
+            }
         }
     }
 }
